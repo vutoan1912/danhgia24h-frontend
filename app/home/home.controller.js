@@ -5,10 +5,11 @@
         .module('danhgia24HApp')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];
+    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state','$rootScope'];
 
-    function HomeController ($scope, Principal, LoginService, $state) {
+    function HomeController ($scope, Principal, LoginService, $state, $rootScope) {
         var vm = this;
+        $rootScope.classBody = "cms-index-index cms-home-page";
 
         vm.account = null;
         vm.isAuthenticated = null;
@@ -26,6 +27,7 @@
                 vm.isAuthenticated = Principal.isAuthenticated;
             });
         }
+
         function register () {
             $state.go('register');
         }
