@@ -9,16 +9,16 @@
 
     function stateConfig($stateProvider) {
         $stateProvider
-            .state('error', {
+            .state('error404', {
                 parent: 'app',
-                url: '/error',
+                url: '/error404',
                 data: {
                     authorities: [],
                     pageTitle: 'error.title'
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'app/layouts/error/error.html'
+                        templateUrl: 'app/layouts/error/error404.html'
                     }
                 },
                 resolve: {
@@ -28,15 +28,16 @@
                     }]
                 }
             })
-            .state('accessdenied', {
+            .state('error403', {
                 parent: 'app',
-                url: '/accessdenied',
+                url: '/error403',
                 data: {
-                    authorities: []
+                    authorities: [],
+                    pageTitle: 'error.title'
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'app/layouts/error/accessdenied.html'
+                        templateUrl: 'app/layouts/error/error403.html'
                     }
                 },
                 resolve: {
@@ -45,6 +46,7 @@
                         return $translate.refresh();
                     }]
                 }
-            });
+            })
+        ;
     }
 })();
