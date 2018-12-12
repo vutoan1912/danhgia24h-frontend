@@ -93,6 +93,67 @@
                     }]
                 }
             })
+            .state('wish-list', {
+                parent: 'app',
+                url: '/wish-list',
+                data: {
+                    authorities: []
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/entities/wish-list/wish-list.html',
+                        controller: 'WishListController',
+                        controllerAs: 'vm'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                        $translatePartialLoader.addPart('singlepr');
+                        return $translate.refresh();
+                    }]
+                }
+            })
+            .state('shopping-cart', {
+                parent: 'app',
+                url: '/shopping-cart',
+                data: {
+                    authorities: []
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/entities/shopping-cart/shopping-cart.html',
+                        controller: 'ShoppingCartController',
+                        controllerAs: 'vm'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                        $translatePartialLoader.addPart('singlepr');
+                        return $translate.refresh();
+                    }]
+                }
+            })
+            //orders-list
+            .state('orders-list', {
+                parent: 'app',
+                url: '/orders-list',
+                data: {
+                    authorities: []
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/entities/orders-list/orders-list.html',
+                        controller: 'OrdersListController',
+                        controllerAs: 'vm'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                        $translatePartialLoader.addPart('singlepr');
+                        return $translate.refresh();
+                    }]
+                }
+            })
         ;
     }
 })();

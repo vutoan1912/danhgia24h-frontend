@@ -1,130 +1,223 @@
-<div>
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <h1 data-translate="register.title">Registration</h1>
+<!-- Breadcrumbs -->
 
-            <div class="alert alert-success" ng-show="vm.success" data-translate="register.messages.success">
-                <strong>Registration saved!</strong> Please check your email for confirmation.
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <ul>
+                    <li class="home"> <a title="Go to Home Page" href="index.html">Home</a><span>&raquo;</span></li>
+                    <li><strong>Register</strong></li>
+                </ul>
             </div>
-
-            <div class="alert alert-danger" ng-show="vm.error" data-translate="register.messages.error.fail">
-                <strong>Registration failed!</strong> Please try again later.
-            </div>
-
-            <div class="alert alert-danger" ng-show="vm.errorUserExists" data-translate="register.messages.error.userexists">
-                <strong>Login name already registered!</strong> Please choose another one.
-            </div>
-
-            <div class="alert alert-danger" ng-show="vm.errorEmailExists" data-translate="register.messages.error.emailexists">
-                <strong>Email is already in use!</strong> Please choose another one.
-            </div>
-
-            <div class="alert alert-danger" ng-show="vm.doNotMatch" data-translate="global.messages.error.dontmatch">
-                The password and its confirmation do not match!
-            </div>
-        </div>
-        <div class="col-md-4 col-md-offset-2">
-            <form ng-show="!vm.success" name="form" role="form" novalidate ng-submit="vm.register()" show-validation>
-
-                <div class="form-group">
-                    <label class="control-label" for="login" data-translate="global.form.username">Username</label>
-                    <input type="text" class="form-control" id="login" name="login" placeholder="{{'global.form.username.placeholder' | translate}}"
-                           ng-model="vm.registerAccount.login" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z0-9-]*$/" required>
-                    <div ng-show="form.login.$dirty && form.login.$invalid">
-                        <p class="help-block"
-                               ng-show="form.login.$error.required" data-translate="register.messages.validate.login.required">
-                            Your username is required.
-                        </p>
-                        <p class="help-block"
-                               ng-show="form.login.$error.minlength" data-translate="register.messages.validate.login.minlength">
-                            Your username is required to be at least 1 character.
-                        </p>
-                        <p class="help-block"
-                               ng-show="form.login.$error.maxlength" data-translate="register.messages.validate.login.maxlength">
-                            Your username cannot be longer than 50 characters.
-                        </p>
-                        <p class="help-block"
-                               ng-show="form.login.$error.pattern" data-translate="register.messages.validate.login.pattern">
-                            Your username can only contain letters and digits.
-                    </p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="email" data-translate="global.form.email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="{{'global.form.email.placeholder' | translate}}"
-                           ng-model="vm.registerAccount.email" ng-minlength=5 ng-maxlength=100 required>
-                    <div ng-show="form.email.$dirty && form.email.$invalid">
-                        <p class="help-block"
-                               ng-show="form.email.$error.required" data-translate="global.messages.validate.email.required">
-                            Your email is required.
-                        </p>
-                        <p class="help-block"
-                               ng-show="form.email.$error.email" data-translate="global.messages.validate.email.invalid">
-                            Your email is invalid.
-                        </p>
-                        <p class="help-block"
-                               ng-show="form.email.$error.minlength" data-translate="global.messages.validate.email.minlength">
-                            Your email is required to be at least 5 characters.
-                        </p>
-                        <p class="help-block"
-                               ng-show="form.email.$error.maxlength" data-translate="global.messages.validate.email.maxlength">
-                            Your email cannot be longer than 100 characters.
-                        </p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="password" data-translate="global.form.newpassword">New password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="{{'global.form.newpassword.placeholder' | translate}}"
-                           ng-model="vm.registerAccount.password" ng-minlength=4 ng-maxlength=50 required>
-                    <div ng-show="form.password.$dirty && form.password.$invalid">
-                        <p class="help-block"
-                               ng-show="form.password.$error.required" data-translate="global.messages.validate.newpassword.required">
-                            Your password is required.
-                        </p>
-                        <p class="help-block"
-                               ng-show="form.password.$error.minlength" data-translate="global.messages.validate.newpassword.minlength">
-                            Your password is required to be at least 4 characters.
-                        </p>
-                        <p class="help-block"
-                               ng-show="form.password.$error.maxlength" data-translate="global.messages.validate.newpassword.maxlength">
-                            Your password cannot be longer than 50 characters.
-                        </p>
-                    </div>
-                    <password-strength-bar password-to-check="vm.registerAccount.password"></password-strength-bar>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="confirmPassword" data-translate="global.form.confirmpassword">New password confirmation</label>
-                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="{{'global.form.confirmpassword.placeholder' | translate}}"
-                           ng-model="vm.confirmPassword" ng-minlength=4 ng-maxlength=50 required>
-                    <div ng-show="form.confirmPassword.$dirty && form.confirmPassword.$invalid">
-                        <p class="help-block"
-                               ng-show="form.confirmPassword.$error.required" data-translate="global.messages.validate.confirmpassword.required">
-                            Your confirmation password is required.
-                        </p>
-                        <p class="help-block"
-                               ng-show="form.confirmPassword.$error.minlength" data-translate="global.messages.validate.confirmpassword.minlength">
-                            Your confirmation password is required to be at least 4 characters.
-                        </p>
-                        <p class="help-block"
-                               ng-show="form.confirmPassword.$error.maxlength" data-translate="global.messages.validate.confirmpassword.maxlength">
-                            Your confirmation password cannot be longer than 50 characters.
-                        </p>
-                    </div>
-                </div>
-
-                <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" data-translate="register.form.button">Register</button>
-            </form>
-            <p></p>
-            <div class="alert alert-warning" data-translate="global.messages.info.authenticated" translate-compile>
-                If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
-            </div>
-        </div>
-        <div class="col-md-4">
-            <br/>
-            <jh-social ng-provider="google"></jh-social>
-            <jh-social ng-provider="facebook"></jh-social>
-            <jh-social ng-provider="twitter"></jh-social>
-            <!-- jhipster-needle-add-social-button -->
         </div>
     </div>
 </div>
+<!-- Breadcrumbs End -->
+
+<!-- Main Container -->
+<section class="main-container col1-layout">
+    <div class="main container">
+        <div class="page-content">
+            <div class="account-login">
+                <div class="col-md-3 col-sm-2"></div>
+                <div class="col-md-6 col-sm-8">
+                    <div class="single-input p-bottom50 clearfix">
+                        <form action="my-account.html" method="post">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="check-title">
+                                        <h4>New Customer</h4>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>First Name:</label>
+                                    <div class="input-text">
+                                        <input type="text" name="name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>Last Name:</label>
+                                    <div class="input-text">
+                                        <input type="text" name="name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <label>Address:</label>
+                                    <div class="input-text">
+                                        <input type="text" name="address" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <label>City/Town:</label>
+                                    <div class="input-text">
+                                        <input type="text" name="city" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>Email:</label>
+                                    <div class="input-text">
+                                        <input type="text" name="email" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>Phone:</label>
+                                    <div class="input-text">
+                                        <input type="text" name="phone" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12" style="padding-top: 15px;">
+                                    <div class="billing-checkbox">
+                                        <input type="checkbox" value="forever" id="rememberme" name="rememberme">
+                                        Sign up for our newsletter! </div>
+                                    <div class="submit-text" style="padding-top: 5px;">
+                                        <button class="button"><i class="fa fa-user"></i>&nbsp; <span>Register</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Main Container End -->
+<!-- service section -->
+<div class="jtv-service-area">
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-3 col-sm-6 col-xs-12">
+                <div class="block-wrapper ship">
+                    <div class="text-des">
+                        <div class="icon-wrapper"><i class="fa fa-paper-plane"></i></div>
+                        <div class="service-wrapper">
+                            <h3>World-Wide Shipping</h3>
+                            <p>On order over $99</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3 col-sm-6 col-xs-12 ">
+                <div class="block-wrapper return">
+                    <div class="text-des">
+                        <div class="icon-wrapper"><i class="fa fa-rotate-right"></i></div>
+                        <div class="service-wrapper">
+                            <h3>30 Days Return</h3>
+                            <p>Moneyback guarantee </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3 col-sm-6 col-xs-12">
+                <div class="block-wrapper support">
+                    <div class="text-des">
+                        <div class="icon-wrapper"><i class="fa fa-umbrella"></i></div>
+                        <div class="service-wrapper">
+                            <h3>Support 24/7</h3>
+                            <p>Call us: ( +123 ) 456 789</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3 col-sm-6 col-xs-12">
+                <div class="block-wrapper user">
+                    <div class="text-des">
+                        <div class="icon-wrapper"><i class="fa fa-tags"></i></div>
+                        <div class="service-wrapper">
+                            <h3>Member Discount</h3>
+                            <p>25% on order over $199</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jquery.mobile-menu js -->
+<script type="text/javascript" src="js/mobile-menu.js"></script>
+
+<!--jquery-ui.min js -->
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+
+<!-- main js -->
+<script type="text/javascript" src="js/main.js"></script>
+
+<!-- countdown js -->
+<script type="text/javascript" src="js/countdown.js"></script>
+
+<!-- Slider Js -->
+<script type="text/javascript" src="js/revolution-slider.js"></script>
+<script type='text/javascript'>
+    jQuery(document).ready(function(){
+        jQuery('#rev_slider_4').show().revolution({
+            dottedOverlay: 'none',
+            delay: 5000,
+            startwidth: 865,
+            startheight: 450,
+
+            hideThumbs: 200,
+            thumbWidth: 200,
+            thumbHeight: 50,
+            thumbAmount: 2,
+
+            navigationType: 'thumb',
+            navigationArrows: 'solo',
+            navigationStyle: 'round',
+
+            touchenabled: 'on',
+            onHoverStop: 'on',
+
+            swipe_velocity: 0.7,
+            swipe_min_touches: 1,
+            swipe_max_touches: 1,
+            drag_block_vertical: false,
+
+            spinner: 'spinner0',
+            keyboardNavigation: 'off',
+
+            navigationHAlign: 'center',
+            navigationVAlign: 'bottom',
+            navigationHOffset: 0,
+            navigationVOffset: 20,
+
+            soloArrowLeftHalign: 'left',
+            soloArrowLeftValign: 'center',
+            soloArrowLeftHOffset: 20,
+            soloArrowLeftVOffset: 0,
+
+            soloArrowRightHalign: 'right',
+            soloArrowRightValign: 'center',
+            soloArrowRightHOffset: 20,
+            soloArrowRightVOffset: 0,
+
+            shadow: 0,
+            fullWidth: 'on',
+            fullScreen: 'off',
+
+            stopLoop: 'off',
+            stopAfterLoops: -1,
+            stopAtSlide: -1,
+
+            shuffle: 'off',
+
+            autoHeight: 'off',
+            forceFullWidth: 'on',
+            fullScreenAlignForce: 'off',
+            minFullScreenHeight: 0,
+            hideNavDelayOnMobile: 1500,
+
+            hideThumbsOnMobile: 'off',
+            hideBulletsOnMobile: 'off',
+            hideArrowsOnMobile: 'off',
+            hideThumbsUnderResolution: 0,
+
+
+            hideSliderAtLimit: 0,
+            hideCaptionAtLimit: 0,
+            hideAllCaptionAtLilmit: 0,
+            startWithSlide: 0,
+            fullScreenOffsetContainer: ''
+        });
+    });
+</script>

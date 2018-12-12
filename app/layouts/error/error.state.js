@@ -9,16 +9,18 @@
 
     function stateConfig($stateProvider) {
         $stateProvider
-            .state('error404', {
+            .state('error-404', {
                 parent: 'app',
-                url: '/error404',
+                url: '/error-404',
                 data: {
                     authorities: [],
                     pageTitle: 'error.title'
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'app/layouts/error/error404.html'
+                        templateUrl: 'app/layouts/error/error404.html',
+                        controller: 'Error404Controller',
+                        controllerAs: 'vm'
                     }
                 },
                 resolve: {
@@ -28,16 +30,18 @@
                     }]
                 }
             })
-            .state('error403', {
+            .state('error-403', {
                 parent: 'app',
-                url: '/error403',
+                url: '/error-403',
                 data: {
                     authorities: [],
                     pageTitle: 'error.title'
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'app/layouts/error/error403.html'
+                        templateUrl: 'app/layouts/error/error403.html',
+                        controller: 'Error403Controller',
+                        controllerAs: 'vm'
                     }
                 },
                 resolve: {
