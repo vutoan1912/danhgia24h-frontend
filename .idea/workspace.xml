@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="536dcd0e-e38a-42b4-87d7-c780b78f08bf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/account/register/register-backup.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/entities/orders-list/orders-list.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/entities/orders-list/orders-list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/entities/shopping-cart/shopping-cart.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/entities/shopping-cart/shopping-cart.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/entities/wish-list/wish-list.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/entities/wish-list/wish-list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/layouts/error/error403.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/layouts/error/error404.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/account/account.state.js" afterPath="$PROJECT_DIR$/app/account/account.state.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/account/register/register.controller.js" afterPath="$PROJECT_DIR$/app/account/register/register.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/account/register/register.html" afterPath="$PROJECT_DIR$/app/account/register/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/entities/entity.state.js" afterPath="$PROJECT_DIR$/app/entities/entity.state.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/layouts/error/error.state.js" afterPath="$PROJECT_DIR$/app/layouts/error/error.state.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="entity.state.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="entity.state.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/entities/entity.state.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="139" column="23" lean-forward="true" selection-start-line="139" selection-start-column="23" selection-end-line="139" selection-end-column="23" />
+            <state relative-caret-position="445">
+              <caret line="136" column="35" lean-forward="true" selection-start-line="136" selection-start-column="35" selection-end-line="136" selection-end-column="35" />
               <folding>
                 <element signature="e#251#328#0" expanded="false" />
                 <element signature="e#367#1150#0" expanded="false" />
@@ -128,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="496" column="0" lean-forward="true" selection-start-line="496" selection-start-column="0" selection-end-line="496" selection-end-column="0" />
+            <state relative-caret-position="656">
+              <caret line="506" column="21" lean-forward="true" selection-start-line="506" selection-start-column="21" selection-end-line="506" selection-end-column="21" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#footer#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -248,12 +234,12 @@
         <option value="$PROJECT_DIR$/app/entities/wish-list/wish-list.html" />
         <option value="$PROJECT_DIR$/app/entities/shopping-cart/shopping-cart.controller.js" />
         <option value="$PROJECT_DIR$/app/entities/shopping-cart/shopping-cart.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app/account/register/register.controller.js" />
         <option value="$PROJECT_DIR$/app/account/register/register.html" />
         <option value="$PROJECT_DIR$/app/entities/entity.state.js" />
         <option value="$PROJECT_DIR$/app/entities/orders-list/wish-list.controller.js" />
         <option value="$PROJECT_DIR$/app/entities/orders-list/orders-list.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -1060,12 +1046,12 @@
       <workItem from="1543985555303" duration="9802000" />
       <workItem from="1544080797636" duration="9266000" />
       <workItem from="1544154363385" duration="1778000" />
-      <workItem from="1544511290990" duration="10747000" />
+      <workItem from="1544511290990" duration="10864000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34546000" />
+    <option name="totallyTimeSpent" value="34663000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -3313,19 +3299,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="496" column="0" lean-forward="true" selection-start-line="496" selection-start-column="0" selection-end-line="496" selection-end-column="0" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#footer#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#20015#20297#0" expanded="false" />
-            <element signature="e#20302#20801#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/entities/orders-list/orders-list.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -3405,8 +3378,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/entities/entity.state.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="139" column="23" lean-forward="true" selection-start-line="139" selection-start-column="23" selection-end-line="139" selection-end-column="23" />
+        <state relative-caret-position="445">
+          <caret line="136" column="35" lean-forward="true" selection-start-line="136" selection-start-column="35" selection-end-line="136" selection-end-column="35" />
           <folding>
             <element signature="e#251#328#0" expanded="false" />
             <element signature="e#367#1150#0" expanded="false" />
@@ -3425,6 +3398,19 @@
             <element signature="e#1769#1914#0" expanded="false" />
             <element signature="e#1980#2739#0" expanded="false" />
             <element signature="e#2773#3536#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="506" column="21" lean-forward="true" selection-start-line="506" selection-start-column="21" selection-end-line="506" selection-end-column="21" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#footer#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#20015#20297#0" expanded="false" />
+            <element signature="e#20302#20801#0" expanded="false" />
           </folding>
         </state>
       </provider>
