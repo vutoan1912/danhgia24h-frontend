@@ -93,26 +93,6 @@
                     }]
                 }
             })
-            .state('wish-list', {
-                parent: 'app',
-                url: '/wish-list',
-                data: {
-                    authorities: []
-                },
-                views: {
-                    'content@': {
-                        templateUrl: 'app/entities/wish-list/wish-list.html',
-                        controller: 'WishListController',
-                        controllerAs: 'vm'
-                    }
-                },
-                resolve: {
-                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                        $translatePartialLoader.addPart('singlepr');
-                        return $translate.refresh();
-                    }]
-                }
-            })
             .state('shopping-cart', {
                 parent: 'app',
                 url: '/shopping-cart',
@@ -133,17 +113,37 @@
                     }]
                 }
             })
-            //orders-list
-            .state('orders-list', {
+            //manufacturers
+            .state('manufacturers', {
                 parent: 'app',
-                url: '/orders-list',
+                url: '/manufacturers',
                 data: {
                     authorities: []
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'app/entities/orders-list/orders-list.html',
-                        controller: 'OrdersListController',
+                        templateUrl: 'app/entities/manufacturers/manufacturers.html',
+                        controller: 'ManufacturersController',
+                        controllerAs: 'vm'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                        $translatePartialLoader.addPart('singlepr');
+                        return $translate.refresh();
+                    }]
+                }
+            })
+            .state('compare', {
+                parent: 'app',
+                url: '/compare',
+                data: {
+                    authorities: []
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/entities/compare/compare.html',
+                        controller: 'CompareController',
                         controllerAs: 'vm'
                     }
                 },
