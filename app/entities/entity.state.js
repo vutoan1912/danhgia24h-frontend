@@ -17,7 +17,8 @@
                 parent: 'app',
                 url: '/single-product',
                 data: {
-                    authorities: []
+                    authorities: [],
+                    pageTitle: 'singleProduct.title'
                 },
                 views: {
                     'content@': {
@@ -28,7 +29,7 @@
                 },
                 resolve: {
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                        $translatePartialLoader.addPart('singlepr');
+                        $translatePartialLoader.addPart('single-product');
                         return $translate.refresh();
                     }]
                 }
@@ -37,7 +38,8 @@
                 parent: 'app',
                 url: '/shop-grid',
                 data: {
-                    authorities: []
+                    authorities: [],
+                    pageTitle: 'shopGrid.title'
                 },
                 views: {
                     'content@': {
@@ -48,7 +50,7 @@
                 },
                 resolve: {
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                        $translatePartialLoader.addPart('singlepr');
+                        $translatePartialLoader.addPart('shop-grid');
                         return $translate.refresh();
                     }]
                 }
@@ -57,7 +59,8 @@
                 parent: 'app',
                 url: '/about-us',
                 data: {
-                    authorities: []
+                    authorities: [],
+                    pageTitle: 'aboutUs.title'
                 },
                 views: {
                     'content@': {
@@ -68,7 +71,7 @@
                 },
                 resolve: {
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                        $translatePartialLoader.addPart('singlepr');
+                        $translatePartialLoader.addPart('about-us');
                         return $translate.refresh();
                     }]
                 }
@@ -77,7 +80,8 @@
                 parent: 'app',
                 url: '/shop-list',
                 data: {
-                    authorities: []
+                    authorities: [],
+                    pageTitle: 'shopList.title'
                 },
                 views: {
                     'content@': {
@@ -88,7 +92,7 @@
                 },
                 resolve: {
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                        $translatePartialLoader.addPart('singlepr');
+                        $translatePartialLoader.addPart('shop-list');
                         return $translate.refresh();
                     }]
                 }
@@ -97,7 +101,8 @@
                 parent: 'app',
                 url: '/shopping-cart',
                 data: {
-                    authorities: []
+                    authorities: [],
+                    pageTitle: 'shoppingCart.title'
                 },
                 views: {
                     'content@': {
@@ -108,7 +113,7 @@
                 },
                 resolve: {
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                        $translatePartialLoader.addPart('singlepr');
+                        $translatePartialLoader.addPart('shopping-cart');
                         return $translate.refresh();
                     }]
                 }
@@ -118,7 +123,8 @@
                 parent: 'app',
                 url: '/manufacturers',
                 data: {
-                    authorities: []
+                    authorities: [],
+                    pageTitle: 'manufacturers.title'
                 },
                 views: {
                     'content@': {
@@ -129,7 +135,7 @@
                 },
                 resolve: {
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                        $translatePartialLoader.addPart('singlepr');
+                        $translatePartialLoader.addPart('manufacturers');
                         return $translate.refresh();
                     }]
                 }
@@ -138,7 +144,8 @@
                 parent: 'app',
                 url: '/compare',
                 data: {
-                    authorities: []
+                    authorities: [],
+                    pageTitle: 'compare.title'
                 },
                 views: {
                     'content@': {
@@ -149,7 +156,133 @@
                 },
                 resolve: {
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                        $translatePartialLoader.addPart('singlepr');
+                        $translatePartialLoader.addPart('compare');
+                        return $translate.refresh();
+                    }]
+                }
+            })
+            .state('blog-items', {
+                parent: 'app',
+                url: '/blog-items',
+                data: {
+                    authorities: [],
+                    pageTitle: 'blog.title'
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/entities/blog-items/blog-items.html',
+                        controller: 'BlogItemsController',
+                        controllerAs: 'vm'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                        $translatePartialLoader.addPart('blog');
+                        return $translate.refresh();
+                    }]
+                }
+            })
+            .state('blog-list', {
+                parent: 'app',
+                url: '/blog-list',
+                data: {
+                    authorities: [],
+                    pageTitle: 'blog.title'
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/entities/blog-list/blog-list.html',
+                        controller: 'BlogListController',
+                        controllerAs: 'vm'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                        $translatePartialLoader.addPart('blog');
+                        return $translate.refresh();
+                    }]
+                }
+            })
+            .state('blog-right-sidebar', {
+                parent: 'app',
+                url: '/blog-right-sidebar',
+                data: {
+                    authorities: [],
+                    pageTitle: 'blog.title'
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/entities/blog-right-sidebar/blog-right-sidebar.html',
+                        controller: 'BlogRightSidebarController',
+                        controllerAs: 'vm'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                        $translatePartialLoader.addPart('blog');
+                        return $translate.refresh();
+                    }]
+                }
+            })
+            .state('blog-detail', {
+                parent: 'app',
+                url: '/blog-detail',
+                data: {
+                    authorities: [],
+                    pageTitle: 'blog.title'
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/entities/blog-detail/blog-detail.html',
+                        controller: 'BlogDetailController',
+                        controllerAs: 'vm'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                        $translatePartialLoader.addPart('blog');
+                        return $translate.refresh();
+                    }]
+                }
+            })
+            .state('sitemap', {
+                parent: 'app',
+                url: '/sitemap',
+                data: {
+                    authorities: [],
+                    pageTitle: 'sitemap.title'
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/entities/sitemap/sitemap.html',
+                        controller: 'SitemapController',
+                        controllerAs: 'vm'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                        $translatePartialLoader.addPart('site-map');
+                        return $translate.refresh();
+                    }]
+                }
+            })
+            .state('faq', {
+                parent: 'app',
+                url: '/faq',
+                data: {
+                    authorities: [],
+                    pageTitle: 'faq.title'
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/entities/faq/faq.html',
+                        controller: 'FaqController',
+                        controllerAs: 'vm'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                        $translatePartialLoader.addPart('faq');
                         return $translate.refresh();
                     }]
                 }

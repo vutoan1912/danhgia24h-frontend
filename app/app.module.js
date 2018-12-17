@@ -29,14 +29,14 @@
 
         $rootScope.$on('$stateChangeSuccess', function () {
 
-            console.log('stateChangeSuccess');
+            //console.log('stateChangeSuccess');
 
         });
 
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
-            console.log(fromState);
-            console.log(toState);
+            //console.log(fromState);
+            //console.log(toState);
 
         });
     }

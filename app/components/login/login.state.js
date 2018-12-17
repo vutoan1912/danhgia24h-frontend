@@ -8,23 +8,23 @@
     stateConfig.$inject = ['$stateProvider'];
 
     function stateConfig($stateProvider) {
-        $stateProvider.state('register', {
-            parent: 'account',
-            url: '/register',
+        $stateProvider.state('login', {
+            parent: 'app',
+            url: '/login',
             data: {
                 authorities: [],
-                pageTitle: 'register.title'
+                pageTitle: 'login.title'
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/account/register/register.html',
-                    controller: 'RegisterController',
+                    templateUrl: 'app/components/login/login.html',
+                    controller: 'LoginController',
                     controllerAs: 'vm'
                 }
             },
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                    $translatePartialLoader.addPart('register');
+                    $translatePartialLoader.addPart('login');
                     return $translate.refresh();
                 }]
             }

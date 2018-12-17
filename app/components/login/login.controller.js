@@ -9,6 +9,7 @@
 
     function LoginController ($rootScope, $state, $timeout, Auth, $uibModalInstance) {
         var vm = this;
+        $rootScope.classBody = "myaccount_page";
 
         vm.authenticationError = false;
         vm.cancel = cancel;

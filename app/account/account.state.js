@@ -18,7 +18,8 @@
                 parent: 'app',
                 url: '/orders-list',
                 data: {
-                    authorities: []
+                    authorities: [],
+                    pageTitle: 'ordersList.title'
                 },
                 views: {
                     'content@': {
@@ -29,16 +30,18 @@
                 },
                 resolve: {
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                        $translatePartialLoader.addPart('singlepr');
+                        $translatePartialLoader.addPart('orders-list');
                         return $translate.refresh();
                     }]
                 }
             })
+            //wish-list
             .state('wish-list', {
                 parent: 'app',
                 url: '/wish-list',
                 data: {
-                    authorities: []
+                    authorities: [],
+                    pageTitle: 'wishList.title'
                 },
                 views: {
                     'content@': {
@@ -49,7 +52,7 @@
                 },
                 resolve: {
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                        $translatePartialLoader.addPart('singlepr');
+                        $translatePartialLoader.addPart('wish-list');
                         return $translate.refresh();
                     }]
                 }
@@ -59,7 +62,8 @@
                 parent: 'app',
                 url: '/order-detail',
                 data: {
-                    authorities: []
+                    authorities: [],
+                    pageTitle: 'orderDetail.title'
                 },
                 views: {
                     'content@': {
@@ -70,7 +74,7 @@
                 },
                 resolve: {
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                        $translatePartialLoader.addPart('singlepr');
+                        $translatePartialLoader.addPart('order-detail');
                         return $translate.refresh();
                     }]
                 }
@@ -80,7 +84,8 @@
                 parent: 'app',
                 url: '/dashboard',
                 data: {
-                    authorities: []
+                    authorities: [],
+                    pageTitle: 'dashboard.title'
                 },
                 views: {
                     'content@': {
@@ -91,7 +96,7 @@
                 },
                 resolve: {
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                        $translatePartialLoader.addPart('singlepr');
+                        $translatePartialLoader.addPart('dashboard');
                         return $translate.refresh();
                     }]
                 }
