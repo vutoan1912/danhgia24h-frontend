@@ -5,9 +5,9 @@
         .module('danhgia24HApp')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$rootScope', '$state', '$timeout', 'Auth'];
+    LoginController.$inject = ['$rootScope', '$state', '$timeout', 'Auth', '$uibModalInstance'];
 
-    function LoginController ($rootScope, $state, $timeout, Auth) {
+    function LoginController ($rootScope, $state, $timeout, Auth, $uibModalInstance) {
         var vm = this;
         $rootScope.classBody = "myaccount_page";
 
@@ -30,22 +30,19 @@
                 rememberMe: true
             };
             vm.authenticationError = false;
+            $uibModalInstance.dismiss('cancel');
         }
 
         function login (event) {
             event.preventDefault();
-            /*console.log({
-                username: vm.username,
-                password: vm.password,
-                rememberMe: vm.rememberMe
-            });*/
             Auth.login({
                 username: vm.username,
                 password: vm.password,
                 rememberMe: vm.rememberMe
             }).then(function () {
                 vm.authenticationError = false;
-                if ($state.current.name === 'register' || $state.current.name === 'activate' || $state.current.name === 'login' ||
+                $uibModalInstance.close();
+                if ($state.current.name === 'register' || $state.current.name === 'activate' ||
                     $state.current.name === 'finishReset' || $state.current.name === 'requestReset') {
                     $state.go('home');
                 }
@@ -65,10 +62,12 @@
         }
 
         function register () {
+            $uibModalInstance.dismiss('cancel');
             $state.go('register');
         }
 
         function requestResetPassword () {
+            $uibModalInstance.dismiss('cancel');
             $state.go('requestReset');
         }
     }

@@ -17,7 +17,7 @@
                 parent: 'app',
                 url: '/single-product',
                 data: {
-                    authorities: [],
+                    authorities: ['ROLE_ADMIN'],
                     pageTitle: 'singleProduct.title'
                 },
                 views: {

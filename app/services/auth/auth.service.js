@@ -47,7 +47,8 @@
                 var isAuthenticated = Principal.isAuthenticated();
 
                 // an authenticated user can't access to login and register pages
-                if (isAuthenticated && $rootScope.toState.parent === 'account' && ($rootScope.toState.name === 'login' || $rootScope.toState.name === 'register' || $rootScope.toState.name === 'social-auth')) {
+                if (isAuthenticated && $rootScope.toState.parent === 'account' && ($rootScope.toState.name === 'login' ||
+                    $rootScope.toState.name === 'register' || $rootScope.toState.name === 'social-auth')) {
                     $state.go('home');
                 }
 
@@ -61,17 +62,17 @@
                 if ($rootScope.toState.data.authorities && $rootScope.toState.data.authorities.length > 0 && !Principal.hasAnyAuthority($rootScope.toState.data.authorities)) {
                     if (isAuthenticated) {
                         // user is signed in but not authorized for desired state
-                        $state.go('accessdenied');
-                    }
-                    else {
+                        $state.go('error-403');
+                    } else {
                         // user is not authenticated. stow the state they wanted before you
                         // send them to the login service, so you can return them when you're done
                         storePreviousState($rootScope.toState.name, $rootScope.toStateParams);
 
                         // now, send them to the signin state so they can log in
-                        $state.go('accessdenied').then(function() {
+                        /*$state.go('error-403').then(function() {
                             LoginService.open();
-                        });
+                        });*/
+                        $state.go('login');
                     }
                 }
             }

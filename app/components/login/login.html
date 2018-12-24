@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <ul>
-                    <li class="home"> <a title="Go to Home Page" href="index.html">Home</a><span>&raquo;</span></li>
+                    <li class="home"> <a title="Go to Home Page" ui-sref="home">Home</a><span>&raquo;</span></li>
                     <li><strong>My Account</strong></li>
                 </ul>
             </div>
@@ -22,15 +22,16 @@
                 <div class="box-authentication">
                     <h4>Login</h4>
                     <p class="before-login-text">Welcome back! Sign in to your account</p>
-                    <label for="emmail_login">Email address<span class="required">*</span></label>
-                    <input id="emmail_login" type="text" class="form-control">
-                    <label for="password_login">Password<span class="required">*</span></label>
-                    <input id="password_login" type="password" class="form-control">
+                    <label for="emmail_login" data-translate="global.form.username">Email address<span class="required">*</span></label>
+                    <input id="emmail_login" type="text" class="form-control" placeholder="{{'global.form.username.placeholder' | translate}}" ng-model="vm.username">
+                    <label for="password_login" data-translate="login.form.password">Password<span class="required">*</span></label>
+                    <input id="password_login" type="password" class="form-control" placeholder="{{'login.form.password.placeholder' | translate}}" ng-model="vm.password">
                     <p class="forgot-pass"><a href="#">Lost your password?</a></p>
-                    <button class="button"><i class="icon-lock icons"></i>&nbsp; <span>Login</span></button>
+                    <button class="button" ng-click="vm.login($event)"><i class="icon-lock icons"></i>&nbsp; <span>Login</span></button>
                     <label class="inline" for="rememberme">
-                        <input type="checkbox" value="forever" id="rememberme" name="rememberme">
-                        Remember me </label>
+                        <input type="checkbox" value="forever" id="rememberme" name="rememberme" ng-model="vm.rememberMe">
+                        <span data-translate="login.form.rememberme">Remember me</span>
+                    </label>
                 </div>
                 <div class="box-authentication">
                     <h4>Register</h4>

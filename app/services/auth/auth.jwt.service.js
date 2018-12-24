@@ -5,9 +5,9 @@
         .module('danhgia24HApp')
         .factory('AuthServerProvider', AuthServerProvider);
 
-    AuthServerProvider.$inject = ['$http', '$localStorage', '$sessionStorage', '$q'];
+    AuthServerProvider.$inject = ['$http', '$localStorage', '$sessionStorage', '$q', 'API_URL'];
 
-    function AuthServerProvider ($http, $localStorage, $sessionStorage, $q) {
+    function AuthServerProvider ($http, $localStorage, $sessionStorage, $q, API_URL) {
         var service = {
             getToken: getToken,
             login: login,
@@ -26,11 +26,11 @@
         function login (credentials) {
 
             var data = {
-                username: credentials.username,
+                email: credentials.username,
                 password: credentials.password,
                 rememberMe: credentials.rememberMe
             };
-            return $http.post('api/authenticate', data).success(authenticateSuccess);
+            return $http.post(API_URL + 'auth/token', data).success(authenticateSuccess);
 
             function authenticateSuccess (data, status, headers) {
                 var bearerToken = headers('Authorization');
@@ -64,7 +64,6 @@
         }
 
         function logout () {
-
             delete $localStorage.authenticationToken;
             delete $sessionStorage.authenticationToken;
         }
