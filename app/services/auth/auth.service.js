@@ -72,7 +72,9 @@
                         /*$state.go('error-403').then(function() {
                             LoginService.open();
                         });*/
-                        $state.go('login');
+
+                        //comment -- toanvd
+                        //$state.go('login');
                     }
                 }
             }

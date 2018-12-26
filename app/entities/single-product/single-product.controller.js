@@ -27,7 +27,6 @@
             return $scope.tab_id === tab;
         }
         $scope.checkTabCss = function () {
-            console.log($scope.tab_id);
             return $scope.arr_tabs.findIndex(checkAdult);
         };
 

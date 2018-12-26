@@ -45,13 +45,13 @@
                         </div>
                         <div class="ratings">
                             <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> </div>
-                            <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Your Review</a> </p>
+                            <p class="rating-links"><a href="#">1 Review(s)</a><span class="separator">|</span><a href="#">Add Your Review</a></p>
                             <p class="availability in-stock pull-right">Availability: <span>In Stock</span></p>
                         </div>
                         <div class="short-description">
                             <h2>Quick Overview</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.
-                            <p> Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.</p>
+                            <p>Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.</p>
                         </div>
                         <div class="product-color-size-area">
                             <div class="color-area">
@@ -116,14 +116,14 @@
                         <div class="col-xs-12">
                             <div class="product-tab-inner">
                                 <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
-                                    <li><a id="tab_description" data-toggle="tab" ng-click="tabClick('tab_description')"
-                                           ng-class="{'active': checkTabCss() === 0}">Description</a></li>
-                                    <li><a id="tab_reviews" data-toggle="tab" ng-click="tabClick('tab_reviews')"
-                                           ng-class="{'active': checkTabCss() === 1}">Reviews</a></li>
-                                    <li><a id="tab_product_tags" data-toggle="tab" ng-click="tabClick('tab_product_tags')"
-                                           ng-class="{'active': checkTabCss() === 2}">Tags</a></li>
-                                    <li><a id="tab_custom_tabs" data-toggle="tab" ng-click="tabClick('tab_custom_tabs')"
-                                           ng-class="{'active': checkTabCss() === 3}">Custom Tab</a></li>
+                                    <li id="tab_description" ng-click="tabClick('tab_description')" ng-class="{'active': checkTabCss() === 0}">
+                                        <a data-toggle="tab">Description</a></li>
+                                    <li id="tab_reviews" ng-click="tabClick('tab_reviews')" ng-class="{'active': checkTabCss() === 1}">
+                                        <a data-toggle="tab">Reviews</a></li>
+                                    <li id="tab_product_tags" ng-click="tabClick('tab_product_tags')" ng-class="{'active': checkTabCss() === 2}">
+                                        <a data-toggle="tab">Tags</a></li>
+                                    <li id="tab_custom_tabs" ng-click="tabClick('tab_custom_tabs')" ng-class="{'active': checkTabCss() === 3}">
+                                        <a data-toggle="tab">Custom Tab</a></li>
                                 </ul>
                                 <div id="productTabContent" class="tab-content">
                                     <div id="tab_content_description"
